@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop-rails', '~> 2.7.1', require: false
+  gem 'rubocop-rspec', require: false
+  gem "rspec-rails"
 end
 
 group :development do
@@ -22,4 +25,21 @@ group :development do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "spring-commands-rspec"
+end
+
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "factory_bot_rails"
+  gem "launchy"
+  gem "shoulda-matchers", require: false
+  gem "timecop"
+  gem 'faker'
+  gem "webmock"
+  gem 'mocha'
+  gem "email_spec"
+
+  # rspec formatter for OS X
+  gem 'rspec-nc', require: false
 end
